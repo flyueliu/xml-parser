@@ -97,7 +97,7 @@ public class XMLObject {
                         .replaceAll("\\{", "{\"")
                         .replaceAll(",", "\",\"")
                         .replaceAll("}", "\"}"))) +
-                (content.isEmpty() ? "" : (",\"content\":" + "\"" + content + '\"')) +
+                ((content == null || content.isEmpty()) ? "" : (",\"content\":" + "\"" + content + '\"')) +
                 (children == null ? "" : (", \"children\":" + children)) +
                 '}';
     }

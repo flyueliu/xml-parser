@@ -16,12 +16,12 @@ public class ParserTest {
 
     @Test
     public void test02() throws Exception {
-        XMLParser parser = new XMLParser(ParserTest.class.getResourceAsStream("/contact.xml"));
+        XMLParser parser = new XMLParser(ParserTest.class.getResourceAsStream("/andriodMain.xml"));
         XMLObject result = parser.getResult();
-        System.out.println(result.getTagName());
-        System.out.println(result.getSingleTag("contact"));
-        for (XMLObject item : result.getChildren()) {
-            System.out.println(item);
-        }
+        System.out.println(result);
+        String versionCode = result.getAttributes().get("platformBuildVersionCode");
+        System.out.println(versionCode);
+        String versionName = result.getAttributes().get("platformBuildVersionName");
+        System.out.println(versionName);
     }
 }
